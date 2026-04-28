@@ -19,17 +19,17 @@ Terdapat dua arsitektur yang diuji dan dibandingkan:
 
 ## 📁 Struktur Repositori
 
-* `Skenario_A_Raw_Sender.ino` : Kode C++ ESP32 untuk mengirim data mentah (Skenario A).
-* `Skenario_B_Edge_Filtering.ino` : Kode C++ ESP32 untuk memfilter data lokal dengan 1000 partikel (Skenario B).
-* `udp_receiver_A.py` : Script Python penerima UDP Skenario A (Memproses Particle Filter di RasPi).
-* `udp_receiver_B.py` : Script Python penerima UDP Skenario B (Hanya mem-parsing data dari ESP32).
+* `Scenario A.cpp` : Kode C++ ESP32 untuk mengirim data mentah (Skenario A).
+* `Scneario B.cpp` : Kode C++ ESP32 untuk memfilter data lokal dengan 1000 partikel (Skenario B).
+* `UDP_Plot ScenarioA.py` : Script Python penerima UDP Skenario A (Memproses Particle Filter di RasPi).
+* `UDP_Plot ScenarioB.py` : Script Python penerima UDP Skenario B (Hanya mem-parsing data dari ESP32).
 
 ## 🚀 Cara Menjalankan
 
-1. Upload kode `.ino` yang diinginkan ke board ESP32 (atau jalankan di simulator Wokwi).
+1. Upload kode `.ino` yang diinginkan ke board ESP32.
 2. Pastikan IP target (Raspberry Pi) dan Port UDP sudah sesuai di konfigurasi kode ESP32 dan Python.
 3. Jalankan script Python penerima yang sesuai di terminal Raspberry Pi:
    ```bash
-   python udp_receiver_A.py
+   python UDP_Plot ScenarioB.py
    # atau
-   python udp_receiver_B.py
+   python UDP_Plot ScenarioA.py
